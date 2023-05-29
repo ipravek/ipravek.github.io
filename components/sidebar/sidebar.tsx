@@ -23,7 +23,7 @@ const Sidebar = () => {
     },
   ];
 
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(true);
 
   return (
     <>
@@ -34,6 +34,7 @@ const Sidebar = () => {
             alt={""}
             width={50}
             onClick={() => setToggle(!toggle)}
+            className={style.hamburgerImage}
           />
         ) : (
           <Image
@@ -41,6 +42,7 @@ const Sidebar = () => {
             alt={""}
             width={50}
             onClick={() => setToggle(!toggle)}
+            className={style.hamburgerImage}
           />
         )}
       </div>
@@ -56,27 +58,14 @@ const Sidebar = () => {
         {links &&
           links.map((e, idx) => {
             return (
-              <>
-                {toggle ? (
-                  <Link
-                    href={e.path}
-                    className={style.link}
-                    key={idx}
-                    onClick={() => setToggle(!toggle)}
-                  >
-                    {e.name}
-                  </Link>
-                ) : (
-                  <Link
-                    href={e.path}
-                    className={style.link}
-                    key={idx}
-                    onClick={() => setToggle(!toggle)}
-                  >
-                    {e.name}
-                  </Link>
-                )}
-              </>
+              <Link
+                href={e.path}
+                className={style.link}
+                key={idx}
+                onClick={() => setToggle(!toggle)}
+              >
+                {e.name}
+              </Link>
             );
           })}
       </div>

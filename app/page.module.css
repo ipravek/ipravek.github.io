@@ -6,3 +6,6 @@
     font-size: 1rem;
 }
 
+.textMute{
+  color: var(--text-mute);
+}

@@ -2,7 +2,8 @@
   --max-width: 910px;
   --border-radius: 12px;
   --bg-color: #222222;
-  --text-color: white;
+  --text-color: #ffffff;
+  --text-mute: #777;
 }
 
 * {
