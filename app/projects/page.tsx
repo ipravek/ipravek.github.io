@@ -1,16 +1,52 @@
 import React from "react";
 import Card from "@/components/card/card";
 
+const projects = [
+  {
+    name: "Project Name",
+    id: 123,
+    backgroundImage: "https://picsum.photos/600/200",
+  },
+  {
+    name: "Project Name",
+    id: 123,
+    backgroundImage: "https://picsum.photos/600/200",
+  },
+  {
+    name: "Project Name",
+    id: 123,
+    backgroundImage: "https://picsum.photos/600/200",
+  },
+  {
+    name: "Project Name",
+    id: 123,
+    backgroundImage: "https://picsum.photos/600/200",
+  },
+  {
+    name: "Project Name",
+    id: 123,
+    backgroundImage: "https://picsum.photos/600/200",
+  },
+];
+
 const Projects = () => {
   return (
-    <div>
+    <>
       Projects
       <>
-        {[...Array.from(Array(10).keys())].map((e, idx) => {
-          return <Card title={e.toString()} key={idx} />;
-        })}
+        {projects &&
+          projects.map((e, idx) => {
+            return (
+              <Card
+                title={e.name}
+                bgImage={e.backgroundImage}
+                id={e.id.toString()}
+                key={idx}
+              />
+            );
+          })}
       </>
-    </div>
+    </>
   );
 };
 

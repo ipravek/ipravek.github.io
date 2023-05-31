@@ -3,8 +3,7 @@ import { SideBarLinks } from "@/interfaces/interfaces";
 import Link from "next/link";
 import style from "./sidebar.module.css";
 import Image from "next/image";
-import hamburger from "../../public/assets/hamburger.svg";
-import cross from "../../public/assets/cross.svg";
+import { hamburger, cross } from "../../public/assets/img";
 import { useState } from "react";
 
 const Sidebar = () => {

@@ -2,10 +2,63 @@
   font-size: 2rem;
 }
 
-.content{
-    font-size: 1rem;
+.content {
+  font-size: 1rem;
 }
 
-.textMute{
+.textMute {
   color: var(--text-mute);
+}
+
+.textBody {
+  margin-top: 1.5rem;
+}
+
+.techStackContainer {
+  margin-left: 1rem;
+}
+
+.textBody p {
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.techStackIcons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.techStackIcons img {
+  width: 2.8rem;
+  height: 2.8rem;
+}
+
+.rubyStyleDef {
+  color: #b87eb4;
+}
+
+.rubyStyleDefName {
+  color: #ebdc13;
+}
+
+.rubyStyleEnd {
+  color: #b87eb4;
+}
+
+.jsStyleFunctionName {
+  color: #b87eb4;
+}
+
+.jsStyleConst {
+  color: #0082f3;
+}
+
+.jsStyleBracket {
+  color: #ebdc13;
+}
+
+.toggleButton {
+  outline: none;
+  border: none;
+  width: 2rem;
+  background-color: var(--text-color);
 }

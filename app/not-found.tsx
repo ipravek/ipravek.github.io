@@ -1,5 +1,13 @@
-function notFound() {
-  return <div>not-found</div>;
-}
+import Link from "next/link";
 
-export default notFound;
+export default function NotFound() {
+  return (
+    <div>
+      <h2>Not Found</h2>
+      <p>Could not find requested resource</p>
+      <p>
+        View <Link href="/home">all posts</Link>
+      </p>
+    </div>
+  );
+}

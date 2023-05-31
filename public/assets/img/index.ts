@@ -1,0 +1,10 @@
+export const js = require("./js.png");
+export const ror = require("./ror.png");
+export const node = require("./nodejs.png");
+export const react = require("./react.png");
+export const sql = require("./sql.png");
+export const nosql = require("./mongo_leaf.svg");
+export const ruby = require("./ruby.png");
+export const ex = require("./expressjs.png");
+export const cross = require("./cross.svg");
+export const hamburger = require("./hamburger.svg");

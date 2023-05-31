@@ -1,7 +1,8 @@
 import "./globals.css";
 import { Inter, Open_Sans } from "next/font/google";
 import Sidebar from "@/components/sidebar/sidebar";
-const openSans = Open_Sans({ subsets: ["latin"] })
+import NextTopLoader from "nextjs-toploader";
+const openSans = Open_Sans({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Pk",
@@ -19,6 +20,7 @@ export default function RootLayout({
         <div className="container">
           <div className="main-container">
             <div className="sidebar">
+              <NextTopLoader showSpinner={false} />
               <Sidebar />
             </div>
             <div className="main-layout-side">{children}</div>
