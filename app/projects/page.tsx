@@ -5,7 +5,7 @@ import styles from "./projects.module.css";
 import { shoppingCart, musicStream } from "@/public/assets/img/";
 import { motion } from "framer-motion";
 
-export const projects = [
+const projects = [
   {
     name: "Online Video Stream",
     id: 123,
