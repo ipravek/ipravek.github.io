@@ -8,3 +8,6 @@ export const ruby = require("./ruby.png");
 export const ex = require("./expressjs.png");
 export const cross = require("./cross.svg");
 export const hamburger = require("./hamburger.svg");
+export const upRightArrow = require("./up_right_arrow.svg");
+export const shoppingCart = require("./shopping_cart.jpg");
+export const musicStream = require("./music_stream.jpg");

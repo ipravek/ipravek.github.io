@@ -62,3 +62,24 @@
   width: 2rem;
   background-color: var(--text-color);
 }
+
+.contactTitle {
+  margin: 1.5rem 0 0.5rem 0;
+}
+
+.contactMe {
+  margin-top: 1rem;
+}
+
+.contactMe a{
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.contactMe img{
+  fill: var(--text-color);
+}
+
+.socialLinks {
+  display: flex;
+}

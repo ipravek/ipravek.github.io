@@ -13,13 +13,20 @@ import {
   ruby,
   ex,
 } from "../public/assets/img/";
+import SocialLinks from "@/components/socialLinks/socialLinks";
 const RobotoMono = Roboto_Mono({ subsets: ["latin"] });
+import { motion } from "framer-motion";
 
 export default function Home() {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <main className={styles.main}>
+    <motion.main
+      className={styles.main}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{duration: .8}}
+    >
       <div className={styles.title}>Praveenkumar</div>
       <div className={`${styles.content} ${styles.textMute}`}>
         SDE | Gamer (who doesn&apos;t have time to play) | Freelancer
@@ -80,6 +87,38 @@ export default function Home() {
           </p>
         )}
       </div>
-    </main>
+
+      <div className={styles.contactMe}>
+        {toggle ? (
+          <p>
+            <span className={styles.jsStyleConst}>const</span>{" "}
+            <span className={styles.jsStyleFunctionName}>techStacks</span> = ( ){" "}
+            {"=> "}
+            <span className={styles.jsStyleBracket}>{"{"}</span>
+          </p>
+        ) : (
+          <>
+            <p>
+              <span className={styles.rubyStyleDef}>def</span>{" "}
+              <span className={styles.rubyStyleDefName}>contact_me</span>
+            </p>
+          </>
+        )}
+
+        <div className={styles.socialLinks}>
+          <SocialLinks />
+        </div>
+
+        {toggle ? (
+          <p>
+            <span className={styles.jsStyleBracket}>{`${"}"}`}</span>
+          </p>
+        ) : (
+          <p>
+            <span className={styles.rubyStyleEnd}>end</span>
+          </p>
+        )}
+      </div>
+    </motion.main>
   );
 }

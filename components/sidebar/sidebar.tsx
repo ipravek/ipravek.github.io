@@ -5,16 +5,13 @@ import style from "./sidebar.module.css";
 import Image from "next/image";
 import { hamburger, cross } from "../../public/assets/img";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const Sidebar = () => {
   const links: Array<SideBarLinks> = [
     {
       name: "Home",
       path: "/",
-    },
-    {
-      name: "About",
-      path: "/about",
     },
     {
       name: "Projects",
@@ -46,12 +43,15 @@ const Sidebar = () => {
         )}
       </div>
 
-      <div
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.8 }}
         className={`${style.main} ${toggle ? style.inactive : style.active}`}
       >
         <div className={style.logo}>
           {/* <Image src={meme} alt={"logo"} /> */}
-          👻👻👻👻
         </div>
 
         {links &&
@@ -67,7 +67,7 @@ const Sidebar = () => {
               </Link>
             );
           })}
-      </div>
+      </motion.div>
     </>
   );
 };

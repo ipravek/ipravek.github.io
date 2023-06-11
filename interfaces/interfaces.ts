@@ -12,3 +12,12 @@ export interface CardParams {
 export interface Toggle {
   name: string;
 }
+
+export interface ProjectDetail {
+  params: any;
+}
+
+export interface SocialLinks {
+  name: string;
+  link: string;
+}

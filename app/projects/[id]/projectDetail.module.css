@@ -1,0 +1,11 @@
+.title {
+  font-size: 1.5rem;
+}
+
+.stack {
+  color: var(--text-mute);
+}
+
+.body {
+  margin-top: 1rem;
+}
