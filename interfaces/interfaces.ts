@@ -1,3 +1,5 @@
+import { Language } from "@/utils/utils";
+
 export interface SideBarLinks {
   name: string;
   path: string;
@@ -20,4 +22,9 @@ export interface ProjectDetail {
 export interface SocialLinks {
   name: string;
   link: string;
+}
+
+export interface CodeBlock {
+  component: React.ReactNode;
+  lang: Language;
 }

@@ -14,8 +14,8 @@ import {
   ex,
 } from "../public/assets/img/";
 import SocialLinks from "@/components/socialLinks/socialLinks";
-const RobotoMono = Roboto_Mono({ subsets: ["latin"] });
 import { motion } from "framer-motion";
+const RobotoMono = Roboto_Mono({ subsets: ["latin"] });
 
 export default function Home() {
   const [toggle, setToggle] = useState(false);
@@ -25,7 +25,7 @@ export default function Home() {
       className={styles.main}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{duration: .8}}
+      transition={{ duration: 0.8 }}
     >
       <div className={styles.title}>Praveenkumar</div>
       <div className={`${styles.content} ${styles.textMute}`}>
@@ -92,7 +92,7 @@ export default function Home() {
         {toggle ? (
           <p>
             <span className={styles.jsStyleConst}>const</span>{" "}
-            <span className={styles.jsStyleFunctionName}>techStacks</span> = ( ){" "}
+            <span className={styles.jsStyleFunctionName}>contact</span> = ( ){" "}
             {"=> "}
             <span className={styles.jsStyleBracket}>{"{"}</span>
           </p>
@@ -100,7 +100,7 @@ export default function Home() {
           <>
             <p>
               <span className={styles.rubyStyleDef}>def</span>{" "}
-              <span className={styles.rubyStyleDefName}>contact_me</span>
+              <span className={styles.rubyStyleDefName}>contact</span>
             </p>
           </>
         )}
@@ -118,6 +118,10 @@ export default function Home() {
             <span className={styles.rubyStyleEnd}>end</span>
           </p>
         )}
+      </div>
+
+      <div className={styles.codeblock}>
+        {/* <Codeblock component={<SocialLinks />} lang={Language.JAVASCRIPT}/> */}
       </div>
     </motion.main>
   );
