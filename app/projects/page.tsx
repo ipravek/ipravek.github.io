@@ -34,14 +34,14 @@ const Projects = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        Projects
+        {/* Projects */}
       </motion.div>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        {projects &&
+        {/* {projects &&
           projects.map((e, idx) => {
             return (
               <Card
@@ -51,7 +51,15 @@ const Projects = () => {
                 key={idx}
               />
             );
-          })}
+          })} */}
+
+
+          {
+            <div style={{display: 'flex'}}>
+
+            <h2 >Work in Progress 😁👍</h2>
+            </div>
+          }
       </motion.div>
     </>
   );
