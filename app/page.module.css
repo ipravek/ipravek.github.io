@@ -61,6 +61,8 @@
   border: none;
   width: 2rem;
   background-color: var(--text-color);
+  cursor: pointer;
+  border-radius: 2px;
 }
 
 .contactTitle {
@@ -71,12 +73,12 @@
   margin-top: 1rem;
 }
 
-.contactMe a{
+.contactMe a {
   text-decoration: none;
   color: var(--text-color);
 }
 
-.contactMe img{
+.contactMe img {
   fill: var(--text-color);
 }
 

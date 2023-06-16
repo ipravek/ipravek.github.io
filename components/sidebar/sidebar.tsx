@@ -6,6 +6,7 @@ import Image from "next/image";
 import { hamburger, cross } from "../../public/assets/img";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const Sidebar = () => {
   const links: Array<SideBarLinks> = [
@@ -19,6 +20,7 @@ const Sidebar = () => {
     },
   ];
 
+  const pathname = usePathname();
   const [toggle, setToggle] = useState(true);
 
   return (
@@ -43,11 +45,7 @@ const Sidebar = () => {
         )}
       </div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.8 }}
+      <div
         className={`${style.main} ${toggle ? style.inactive : style.active}`}
       >
         <div className={style.logo}>
@@ -59,15 +57,24 @@ const Sidebar = () => {
             return (
               <Link
                 href={e.path}
-                className={style.link}
+                className={`${style.link} ${
+                  pathname == e.path ? style.activeLink : null
+                }`}
                 key={idx}
                 onClick={() => setToggle(!toggle)}
               >
-                {e.name}
+                <motion.div
+                  whileHover={{
+                    scale: 1.05,
+                  }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  {e.name}
+                </motion.div>
               </Link>
             );
           })}
-      </motion.div>
+      </div>
     </>
   );
 };
