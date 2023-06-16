@@ -41,12 +41,16 @@ export default function Home() {
         and staying updated with industry advancements.
       </div>
       <div className={`${styles.textBody} ${RobotoMono.className}`}>
-        <button
+        <motion.button
+          whileTap={{ scale: 0.9 }}
+          whileHover={{
+            scale: 1.1,
+          }}
           onClick={() => setToggle(!toggle)}
           className={styles.toggleButton}
         >
           {toggle ? "rb" : "js"}
-        </button>
+        </motion.button>
 
         {toggle ? (
           <p>
@@ -65,16 +69,35 @@ export default function Home() {
         )}
 
         <div className={styles.techStackContainer}>
-          <div className={styles.techStackIcons}>
-            <Image src={ruby} alt={""} />
-            <Image src={ror} alt={""} title="Ruby on Rails" />
-            <Image src={js} alt={""} />
-            <Image src={node} alt={""} />
-            <Image src={ex} alt={""} />
-            <Image src={react} alt={""} />
-            <Image src={sql} alt={""} />
-            <Image src={nosql} alt={""} />
-          </div>
+          <motion.div
+            transition={{ delay: 1 }}
+            className={styles.techStackIcons}
+          >
+            <motion.div whileHover={{ scale: 1.1 }}>
+              <Image src={ruby} alt={""} />
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.1 }}>
+              <Image src={ror} alt={""} title="Ruby on Rails" />
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.1 }}>
+              <Image src={js} alt={""} />
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.1 }}>
+              <Image src={node} alt={""} />
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.1 }}>
+              <Image src={ex} alt={""} />
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.1 }}>
+              <Image src={react} alt={""} />
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.1 }}>
+              <Image src={sql} alt={""} />
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.1 }}>
+              <Image src={nosql} alt={""} />
+            </motion.div>
+          </motion.div>
         </div>
 
         {toggle ? (

@@ -18,18 +18,14 @@ const SocialLinks = () => {
   return (
     <>
       {socialLinks &&
-        socialLinks.map((e: SocialLinks) => {
+        socialLinks.map((e: SocialLinks, idx: number) => {
           return (
-            <>
-              <div className={styles.main}>
-                <>
-                  <a href={e.link} className={styles.links} target="_blank">
-                    <Image src={upRightArrow} alt="" />
-                    {e.name}
-                  </a>
-                </>
-              </div>
-            </>
+            <div className={styles.main} key={idx}>
+              <a href={e.link} className={styles.links} target="_blank">
+                <Image src={upRightArrow} alt="" />
+                {e.name}
+              </a>
+            </div>
           );
         })}
     </>
