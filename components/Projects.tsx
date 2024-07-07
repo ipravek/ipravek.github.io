@@ -60,7 +60,7 @@ export default function Projects() {
                 <span>|</span>
                 <div className="flex">RestAPI</div>
                 <span>|</span>
-                <div className="flex">Stripe</div>
+                <div className="flex">PayTm</div>
                 <span>|</span>
                 <div className="flex">AWS</div>
               </div>

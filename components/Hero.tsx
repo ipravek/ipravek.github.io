@@ -1,13 +1,16 @@
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { IoMail } from "react-icons/io5";
+import { SiGmail } from "react-icons/si";
+import { Separator } from "./ui/separator";
 
 export default function Hero() {
   return (
     <div className="flex max-w-screen-lg mx-auto">
       <div className="flex flex-col px-10 py-5">
-        <div className="flex text-4xl font-semibold">Praveenkumar</div>
-        <div className="text-sm text-gray-500 py-2">Software Engineer 💻</div>
+        <div className="flex flex-col">
+          <div className="flex text-4xl font-semibold">Praveenkumar</div>
+          <div className="text-sm text-gray-500 py-2">Software Engineer 💻</div>
+        </div>
 
         <div className="flex mt-7">
           With three years of experience, I bring expertise in [mention
@@ -17,19 +20,21 @@ export default function Hero() {
           success.
         </div>
 
-        <div className="flex mt-7 gap-8">
+        <div className="flex mt-7 gap-6">
           <div className="flex">
-            <Link href={"#"} target="_blank">
-              <IoMail size={28} />
+            <Link href={"mailto:iprav3k@gmail.com"} target="_blank">
+              <SiGmail size={28} />
             </Link>
           </div>
+          <Separator orientation="vertical" />
           <div className="flex">
-            <Link href={"#"} target="_blank">
+            <Link href={"https://linkedin.com/in/ipravek"} target="_blank">
               <FaLinkedin size={26} />
             </Link>
           </div>
+          <Separator orientation="vertical" />
           <div className="flex">
-            <Link href={"#"} target="_blank">
+            <Link href={"https://github.com/ipravek"} target="_blank">
               <FaGithub size={26} />
             </Link>
           </div>
