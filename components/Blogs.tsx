@@ -4,10 +4,9 @@ import { FaMedium } from "react-icons/fa";
 export default function Blogs() {
   const blogs = [
     {
-      name: "Distinguishing Implicit and Explicit Returns in Ruby",
-      link: "https://medium.com/@ipravek/distinguishing-implicit-and-explicit-returns-in-ruby-ad75de62bbb3",
-      description:
-        "In Ruby, a function can return a value in two ways implicitly or explicitly. The difference between these two return types lies in the…",
+      name: "Unwrapping the Magic of Promises.",
+      link: "https://medium.com/@ipravek/unwrapping-the-magic-of-promises-ba37cedb9d9b",
+      description: "What Are Promises?",
     },
     {
       name: "Proc or Lambda: Which One Will Take Your Ruby Code to the Next Level?",
@@ -16,9 +15,10 @@ export default function Blogs() {
         "Ruby is a popular and powerful programming language that offers many features to make coding easier and more efficient. two of these…",
     },
     {
-      name: "Unwrapping the Magic of Promises.",
-      link: "https://medium.com/@ipravek/unwrapping-the-magic-of-promises-ba37cedb9d9b",
-      description: "What Are Promises?",
+      name: "Distinguishing Implicit and Explicit Returns in Ruby",
+      link: "https://medium.com/@ipravek/distinguishing-implicit-and-explicit-returns-in-ruby-ad75de62bbb3",
+      description:
+        "In Ruby, a function can return a value in two ways implicitly or explicitly. The difference between these two return types lies in the…",
     },
   ];
 
@@ -26,7 +26,7 @@ export default function Blogs() {
     <>
       <div className="flex max-w-screen-lg mx-auto mt-5">
         <div className="flex flex-col w-full px-10">
-          <div className="flex text-xl font-semibold divider divider-start">
+          <div className="flex text-xl font-semibold divider divider-start my-5">
             Blogs
           </div>
 

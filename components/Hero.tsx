@@ -13,11 +13,10 @@ export default function Hero() {
         </div>
 
         <div className="flex mt-7">
-          With three years of experience, I bring expertise in [mention
-          programming languages/technologies], delivering high-quality projects
-          across diverse domains. Collaborative and solution-oriented, I thrive
-          in dynamic environments, continuously learning to drive innovation and
-          success.
+          With three years of experience, I bring expertise in Node.js, ,
+          delivering high-quality projects across diverse domains. Collaborative
+          and solution-oriented, I thrive in dynamic environments, continuously
+          learning to drive innovation and success.
         </div>
 
         <div className="flex mt-7 gap-6">

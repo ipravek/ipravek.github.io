@@ -2,12 +2,12 @@ export default function Projects() {
   return (
     <>
       <div className="flex max-w-screen-lg mx-auto mt-5">
-        <div className="flex flex-col px-10 relative">
+        <div className="flex flex-col sm:px-10">
           <div className="flex text-xl font-semibold divider divider-start">
             Projects
           </div>
 
-          <div className="grid gap-7 pt-4">
+          <div className="flex flex-col gap-7 pt-4">
             <div className="flex flex-col">
               <div className="flex text-lg">Mapping Tool</div>
               <div className="flex gap-3 text-sm">
@@ -51,7 +51,7 @@ export default function Projects() {
               </div>
             </div>
 
-            <div className="flex flex-col">
+            {/* <div className="flex flex-col">
               <div className="flex text-lg">E-Commerce</div>
               <div className="flex gap-3 text-sm">
                 <div className="flex text-red-500">Ruby on Rails</div>
@@ -70,7 +70,7 @@ export default function Projects() {
                 Eligendi commodi minus quae illo repellendus id suscipit natus
                 ullam rerum doloribus?
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
