@@ -1,28 +1,43 @@
+"use client";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useEffect, useState } from "react";
 
 const poppins = Poppins({ subsets: ["latin"], weight: "400" });
-
-export const metadata: Metadata = {
-  title: "Pk.",
-  description: "ipravek.github.io",
-};
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return <>{children}</>;
+  }
+
   return (
     <html lang="en">
+      <head>
+        <title>Pk</title>
+        <meta
+          name="description"
+          content="A Software developer's page - ipravek.github.com"
+        />
+      </head>
       <body className={poppins.className}>
-        <Navbar />
-        {children}
-        <Footer />
+        <ThemeProvider attribute="class" defaultTheme="system">
+          <Navbar />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -1,11 +1,16 @@
+"use client";
 import Link from "next/link";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { SiGmail } from "react-icons/si";
 import { Separator } from "./ui/separator";
+import {
+  IconMail,
+  IconBrandLinkedin,
+  IconBrandGithub,
+} from "@tabler/icons-react";
+import { motion } from "framer-motion";
 
-export default function Hero() {
+export default function Intro() {
   return (
-    <div className="flex max-w-screen-lg mx-auto">
+    <div className="flex max-w-screen-md mx-auto mt-24">
       <div className="flex flex-col px-10 py-5">
         <div className="flex flex-col">
           <div className="flex text-4xl font-semibold">Praveenkumar</div>
@@ -20,23 +25,27 @@ export default function Hero() {
         </div>
 
         <div className="flex mt-7 gap-6">
-          <div className="flex">
+          <motion.div whileHover={{ scale: 1.1 }} className="flex">
             <Link href={"mailto:iprav3k@gmail.com"} target="_blank">
-              <SiGmail size={28} />
+              <IconMail />
             </Link>
+          </motion.div>
+          <div className="flex items-center justify-center">
+            <Separator orientation="vertical" className="h-4" />
           </div>
-          <Separator orientation="vertical" />
-          <div className="flex">
+          <motion.div whileHover={{ scale: 1.1 }} className="flex">
             <Link href={"https://linkedin.com/in/ipravek"} target="_blank">
-              <FaLinkedin size={26} />
+              <IconBrandLinkedin size={26} />
             </Link>
+          </motion.div>
+          <div className="flex items-center justify-center">
+            <Separator orientation="vertical" className="h-4" />
           </div>
-          <Separator orientation="vertical" />
-          <div className="flex">
+          <motion.div whileHover={{ scale: 1.1 }} className="flex">
             <Link href={"https://github.com/ipravek"} target="_blank">
-              <FaGithub size={26} />
+              <IconBrandGithub size={26} />
             </Link>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

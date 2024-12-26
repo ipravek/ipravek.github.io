@@ -2,7 +2,7 @@ import { getBlog } from "@/utils/getBlogPost";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import readingTime from "reading-time";
-import { Dot } from "lucide-react";
+import { IconDots } from "@tabler/icons-react";
 
 export default function BlogDetail({ params }: { params: { slug: string } }) {
   let blog: any = getBlog({ slug: params.slug });
@@ -14,7 +14,7 @@ export default function BlogDetail({ params }: { params: { slug: string } }) {
         <div className="flex text-sm text-gray-500">
           <span>{blog?.date}</span>
           <span className="px-0.5">
-            <Dot />
+            <IconDots />
           </span>
           <span>{readTime.text}</span>
         </div>
