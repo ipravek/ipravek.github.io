@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
+import { toast } from "sonner";
 import { z } from "zod";
 
 export default function Login() {
@@ -13,6 +14,7 @@ export default function Login() {
     { email: "", password: "" }
   );
   const [error, setError] = useState<any | null>(null);
+  const [loading, setLoading] = useState(false);
   const schema = z.object({
     email: z.string().email("Invalid email address"),
     password: z
@@ -20,9 +22,35 @@ export default function Login() {
       .min(6, { message: "Password must be at least 6 characters long" }),
   });
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => {
+      const newFormData = { ...prev, [name]: value };
+      try {
+        schema.parse(newFormData);
+        setError(null);
+      } catch (error) {
+        if (error instanceof z.ZodError) {
+          let errObj: any = {};
+          error.errors.map((err) => {
+            errObj[err.path[0]] = err.message;
+          });
+          setError(errObj);
+        }
+      }
+      return newFormData;
+    });
+  };
+
   const handleSubmit = async () => {
     try {
-      const validation = schema.parse(formData);
+      setLoading(true);
+      schema.parse(formData);
+      let res = await login({ ...formData });
+
+      console.log({ res });
+
+      toast(JSON.stringify(res));
     } catch (error) {
       console.log({ error });
 
@@ -33,6 +61,8 @@ export default function Login() {
         });
         setError(errObj);
       }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -46,9 +76,7 @@ export default function Login() {
             name="email"
             type="email"
             value={formData.email}
-            onChange={(e) =>
-              setFormData({ ...formData, email: e.target.value })
-            }
+            onChange={handleChange}
             className={cn(error?.email && "outline-none border-red-500")}
           />
           <div className="text-sm text-red-500">{error?.email}</div>
@@ -61,16 +89,19 @@ export default function Login() {
             name="password"
             type="password"
             value={formData.password}
-            onChange={(e) =>
-              setFormData({ ...formData, password: e.target.value })
-            }
+            onChange={handleChange}
             className={cn(error?.password && "outline-none border-red-500")}
           />
           <div className="text-sm text-red-500 ">{error?.password}</div>
         </div>
 
-        <Button type="submit" className="mt-3 w-full" onClick={handleSubmit}>
-          Log in
+        <Button
+          disabled={loading}
+          type="submit"
+          className="mt-3 w-full"
+          onClick={handleSubmit}
+        >
+          {loading ? "Loading..." : "Login"}
         </Button>
       </div>
     </div>

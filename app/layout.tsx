@@ -1,11 +1,11 @@
 "use client";
-import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useEffect, useState } from "react";
+import { Toaster } from "sonner";
 
 const poppins = Poppins({ subsets: ["latin"], weight: "400" });
 
@@ -36,6 +36,7 @@ export default function RootLayout({
       <body className={poppins.className}>
         <ThemeProvider attribute="class" defaultTheme="system">
           <Navbar />
+          <Toaster position="top-center" />
           {children}
         </ThemeProvider>
       </body>
